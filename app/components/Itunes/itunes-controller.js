@@ -11,17 +11,17 @@ function drawSongs(results) {
   for (let i = 0; i < results.length; i++) {
     const song = results[i];
     template += `
-  <div class="col-sm-3 card bg-secondary mx-1 my-1">
+  <div class="col-sm-6 col-md-4 col-lg-2 mx-1 my-1 card bg-opac">
       <img class="card-img" src="${song.albumArt}" />
-    <div class="card-img-overlay d-flex justify-content-end">
+    <div class="card-img-overlay aud-button">
       <audio controls>
         <source src="${song.preview}">
       </audio>
     </div>
     <div class="card-body">
-      <h5 class="card-title">${song.title} $${song.price}</h5>
-      <h5 class="card-text">By: ${song.artist}</h5>
-      <h5 class="card-text"><i class="fas fa-compact-disc"></i> ${song.collection}</h5>
+      <h6 class="card-title text-truncate">${song.title} $${song.price}</h6>
+      <h6 class="card-text text-truncate">By: ${song.artist}</h6>
+      <h6 class="card-text text-truncate"><i class="fas fa-compact-disc"></i> ${song.collection}</h6>
     </div>
   </div>`
 
