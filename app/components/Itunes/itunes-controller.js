@@ -4,6 +4,10 @@ import ItunesService from "./itunes-service.js";
 
 const itunesService = new ItunesService()
 
+function onPlay() {
+  alert("its working");
+}
+
 function drawSongs(results) {
   console.log(results)
   //YOUR CODING STARTS HERE
@@ -14,7 +18,7 @@ function drawSongs(results) {
   <div class="col-sm-6 col-md-4 col-lg-2 mx-2 my-2 card bg-opac">
       <img class="card-img-top" src="${song.albumArt}" />
     <div class="card-img-overlay-bottom d-flex aud-button">
-      <audio controls>
+      <audio controls onplay="onPlay()">
         <source src="${song.preview}">
       </audio>
     </div>
@@ -26,7 +30,6 @@ function drawSongs(results) {
   </div>`
 
   }
-
   document.getElementById('songs').innerHTML = template
 }
 
