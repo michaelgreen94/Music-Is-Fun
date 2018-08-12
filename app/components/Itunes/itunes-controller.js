@@ -14,7 +14,7 @@ function drawSongs(results) {
   <div class="col-sm-6 col-md-4 col-lg-2 mx-2 my-2 card bg-opac">
       <img class="card-img-top" src="${song.albumArt}" />
     <div class="card-img-overlay-bottom d-flex aud-button">
-      <audio controls id="sound" onplay="app.controllers.itunesCtrl.onPlay()">
+      <audio controls id="sound" onplay="app.controllers.itunesCtrl.pauseEm(${song.preview})">
         <source src="${song.preview}">
       </audio>
     </div>
@@ -33,8 +33,14 @@ function drawSongs(results) {
 //PUBLIC
 class ItunesController {
 
-  onPlay() {
-    alert("its working");
+  pauseEm(Url) {
+    let songs = document.getElementsByTagName('audio')
+    for (let i = 0; i < songs.length; i++) {
+      let song = songs[i]
+      if (song.preview != url) {
+        song.pause()
+      }
+    }
   }
 
   //DO NOT MODIFY THIS METHOD
