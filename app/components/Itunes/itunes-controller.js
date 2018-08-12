@@ -4,10 +4,6 @@ import ItunesService from "./itunes-service.js";
 
 const itunesService = new ItunesService()
 
-function onPlay() {
-  alert("its working");
-}
-
 function drawSongs(results) {
   console.log(results)
   //YOUR CODING STARTS HERE
@@ -18,7 +14,7 @@ function drawSongs(results) {
   <div class="col-sm-6 col-md-4 col-lg-2 mx-2 my-2 card bg-opac">
       <img class="card-img-top" src="${song.albumArt}" />
     <div class="card-img-overlay-bottom d-flex aud-button">
-      <audio controls onplay="app.controllers.ItunesController.onPlay()">
+      <audio controls id="sound" onplay="app.controllers.itunesCtrl.onPlay()">
         <source src="${song.preview}">
       </audio>
     </div>
@@ -36,6 +32,11 @@ function drawSongs(results) {
 
 //PUBLIC
 class ItunesController {
+
+  onPlay() {
+    alert("its working");
+  }
+
   //DO NOT MODIFY THIS METHOD
   getMusic(e) {
     e.preventDefault();
@@ -48,7 +49,6 @@ class ItunesController {
       $('#get-music-button').text('GET MUSIC');
     })
   }
-  onPlay() {}
 }
 
 export default ItunesController
