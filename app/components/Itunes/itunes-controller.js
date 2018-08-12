@@ -18,7 +18,7 @@ function drawSongs(results) {
   <div class="col-sm-6 col-md-4 col-lg-2 mx-2 my-2 card bg-opac">
       <img class="card-img-top" src="${song.albumArt}" />
     <div class="card-img-overlay-bottom d-flex aud-button">
-      <audio controls onplay="onPlay()">
+      <audio controls onplay="app.controllers.ItunesController.onPlay()">
         <source src="${song.preview}">
       </audio>
     </div>
@@ -48,9 +48,7 @@ class ItunesController {
       $('#get-music-button').text('GET MUSIC');
     })
   }
-
-
+  onPlay() {}
 }
-
 
 export default ItunesController
