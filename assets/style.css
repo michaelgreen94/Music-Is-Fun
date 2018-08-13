@@ -15,7 +15,7 @@ body {
 }
 
 .aud-button {
-  transform: scale(0.75) translateY(-35px) translateX(-25px);
+  transform: scale(0.75) translateY(-35px);
 
 }
 
