@@ -10,6 +10,9 @@ function drawSongs(results) {
   let template = ''
   for (let i = 0; i < results.length; i++) {
     const song = results[i];
+    if (song.preview.includes('video')) {
+      continue
+    }
     template += `
   <div class="col-sm-6 col-md-4 col-lg-2 mx-2 my-2 card bg-opac">
       <img class="card-img-top" src="${song.albumArt}" />
@@ -37,7 +40,8 @@ class ItunesController {
     let songs = document.getElementsByTagName('audio')
     for (let i = 0; i < songs.length; i++) {
       let song = songs[i]
-      if (song.preview != Url) {
+      console.log(song)
+      if (song.src == Url) {
         song.pause()
       }
     }
